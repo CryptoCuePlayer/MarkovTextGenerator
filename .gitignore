@@ -1,0 +1,8 @@
+public String generateText(int length) {
+        StringBuilder text = new StringBuilder();
+        String prefix = "";
+        Random random = new Random();
+        for (int i = 0; i < length; i++) {
+            String[] suffixes = markovChain.getOrDefault(prefix, new String[0]);
+            if (suffixes.length == 0) {
+                prefix = "";
